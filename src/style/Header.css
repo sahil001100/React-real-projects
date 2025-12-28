@@ -1,0 +1,103 @@
+.header {
+  background: rgb(19, 19, 19);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-left: 2rem; */
+}
+
+.main-nav a, .auth-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0 15px;
+  font-weight: 500;
+}
+.auth-nav a:hover {
+    color: #ff6437;
+}
+.main-nav a:hover {
+    color: #ff6437;
+}
+.btn-signin {
+  border: 1px solid #ff6437;
+  color: #ff6437 !important;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+/* Hamburger Styles */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 2px 0;
+  transition: 0.4s;
+  
+}
+
+/* Responsive Logic for Tablet and Mobile */
+@media (max-width: 1024px) {
+    .header {
+      background: rgb(19, 19, 19);
+      width: 100%;
+    }
+  .menu-toggle {
+    display: flex;
+  }
+  
+
+  .nav-links {
+    display: none; /* Hide links by default on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(35, 34, 34, 0.77);
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(248, 247, 247, 0.1);
+    
+  }
+
+  .nav-links.active {
+    display: flex; /* Show when toggle is clicked */
+    
+  }
+
+  .main-nav, .auth-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .main-nav a, .auth-nav a {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+}
